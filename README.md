@@ -12,9 +12,13 @@
         environment variables have to be set again
     3. flask run
         in order to run
+    4. export FLASK_DEBUG=1
+        turn on debugg mode
 
 ### Things that I still need to do
-    1) Add css / less / sass
+    1) Add SQL database
+    2) user Login
+    3) profile page
 
 
 ### Feel free to Open PR's here and request additional features

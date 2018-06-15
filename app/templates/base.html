@@ -1,16 +1,27 @@
-<html lang="en" dir="ltr">
+<html>
     <head>
-        <meta charset="utf-8">
         {% if title %}
-        <title>{{ title }} - Microblog</title>
+        <title>{{ title }} - microblog</title>
         {% else %}
-        <title>Welcome to Microblog</title>
-        {% endif  %}
+        <title>microblog</title>
+        {% endif %}
     </head>
     <body>
-        <div class="">
-            Microblog: <a href="/index">Home</a>
+        <div>
+            Microblog:
+            <a href="{{ url_for('helloWorld')}}">Home</a>
+            <a href="{{ url_for('login')}}">Login</a>
         </div>
-        {% block content %} {% endblock %}
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
     </body>
 </html>
